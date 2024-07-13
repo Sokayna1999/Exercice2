@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="movieToSearch" placeholder="Chercher un film" />
+<button (click)="search()">Chercher</button>
+
+<div *ngIf="movies">
+  <div *ngFor="let movie of movies.results">
+    <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
+  </div>
+</div>
